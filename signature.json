@@ -1,0 +1,25 @@
+{
+  "TheCalendar": {
+    "description": "Calendar of the-components",
+    "displayName": "TheCalendar",
+    "methods": []
+  },
+  "TheCalendarStyle": {
+    "description": "Style for TheCalendar",
+    "displayName": "TheCalendarStyle",
+    "methods": [],
+    "props": {
+      "options": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Style options",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  }
+}
