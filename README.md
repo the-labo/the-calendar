@@ -90,8 +90,8 @@ class ExampleComponent extends React.Component {
     return (
       <div>
         <TheCalendarStyle/>
-        <TheCalendar onNavigate={(date) => console.log('navigate', date)}
-                     onView={(view) => console.log('view', view)}
+        <TheCalendar onNavigate={(date) => this.setState({date})}
+                     onView={(view) => this.setState({view})}
                      date={this.state.date}
                      view={this.state.view}
         >
@@ -120,6 +120,17 @@ Components
 
 Calendar of the-components
 
+**Props**
+
+| Name | Type | Description | Default |
+| --- | --- | ---- | ---- |
+| `date` | object  | Showing date object | `` |
+| `events` | arrayOf object | Events to show | `[]` |
+| `onNavigate` | func  | Navigate to date | `null` |
+| `onView` | func  | Change view | `` |
+| `view` | string  | View of calendar | `'month'` |
+| `views` | arrayOf string |  | `['month', 'day', 'agenda']` |
+| `toolbar` |   |  | `false` |
 
 ### TheCalendarStyle
 

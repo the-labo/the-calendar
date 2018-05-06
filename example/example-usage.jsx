@@ -16,8 +16,8 @@ class ExampleComponent extends React.Component {
     return (
       <div>
         <TheCalendarStyle/>
-        <TheCalendar onNavigate={(date) => console.log('navigate', date)}
-                     onView={(view) => console.log('view', view)}
+        <TheCalendar onNavigate={(date) => this.setState({date})}
+                     onView={(view) => this.setState({view})}
                      date={this.state.date}
                      view={this.state.view}
         >

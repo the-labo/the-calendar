@@ -2,7 +2,80 @@
   "TheCalendar": {
     "description": "Calendar of the-components",
     "displayName": "TheCalendar",
-    "methods": []
+    "methods": [],
+    "props": {
+      "date": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Showing date object"
+      },
+      "events": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "object"
+          }
+        },
+        "required": false,
+        "description": "Events to show",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "onNavigate": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Navigate to date",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onView": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Change view"
+      },
+      "view": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "View of calendar",
+        "defaultValue": {
+          "value": "'month'",
+          "computed": false
+        }
+      },
+      "views": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "['month', 'day', 'agenda']",
+          "computed": false
+        }
+      },
+      "toolbar": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      }
+    }
   },
   "TheCalendarStyle": {
     "description": "Style for TheCalendar",

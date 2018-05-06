@@ -15,7 +15,7 @@
     "moment": "^2.22.1",
     "prop-types": "^15.6.1",
     "react-big-calendar": "^0.19.1",
-    "the-component-util": "^2.2.1",
+    "the-component-util": "^2.2.3",
     "the-style": "^2.1.0"
   },
   "devDependencies": {
