@@ -8,7 +8,7 @@ import BigCalendar from 'react-big-calendar'
 import { TheButton } from 'the-button'
 import { eventHandlersFor, htmlAttributesFor } from 'the-component-util'
 import { TheCondition } from 'the-condition'
-import { formatDate } from 'the-date'
+import { create as theDate } from 'the-date'
 import TheCalendarStyle from './TheCalendarStyle'
 
 {
@@ -44,10 +44,10 @@ class TheCalendar extends React.Component {
     switch (view) {
       case 'month': {
         const format = lang === 'ja' ? 'YYYY/MM' : 'MMM YYYY'
-        return formatDate(date, format, {lang})
+        return theDate(date, {lang}).format(format)
       }
       case 'day':
-        return formatDate(date, 'LL', {lang})
+        return theDate(date, {lang}).format('LL')
       default:
         return null
     }
@@ -69,11 +69,11 @@ class TheCalendar extends React.Component {
     const {date, view} = this.props
     switch (view) {
       case 'month':
-        return moment(date).add(amount, 'months').toDate()
+        return theDate(date).addMonths(amount).toDate()
       case 'week':
-        return moment(date).add(amount, 'weeks').toDate()
+        return theDate(date).addWeeks(amount).toDate()
       case  'day':
-        return moment(date).add(amount, 'days').toDate()
+        return theDate(date).addDays(amount).toDate()
       default:
         throw new Error(`Unknown view: ${view}`)
     }
