@@ -11,6 +11,18 @@
         "returns": null
       },
       {
+        "name": "changeDate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "amount",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "changeToDate",
         "docblock": null,
         "modifiers": [],
@@ -29,6 +41,18 @@
         "params": [
           {
             "name": "view",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "dateForAmount",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "amount",
             "type": null
           }
         ],
