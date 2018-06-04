@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { TheCalendar, TheCalendarStyle } from 'the-calendar'
+import { TheButtonStyle } from 'the-button'
 
 class ExampleComponent extends React.Component {
   constructor (props) {
@@ -15,6 +16,7 @@ class ExampleComponent extends React.Component {
   render () {
     return (
       <div>
+        <TheButtonStyle/>
         <TheCalendarStyle/>
         <TheCalendar onNavigate={(date) => this.setState({date})}
                      onView={(view) => this.setState({view})}

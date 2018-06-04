@@ -3,6 +3,7 @@
 import c from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { colorWithAlpha } from 'the-color'
 import { asStyleData } from 'the-component-util'
 import TheStyle from 'the-style'
 
@@ -481,7 +482,7 @@ TheCalendarStyle.data = (options) => {
       minHeight: '40px',
     },
     '.rbc-today': {
-      backgroundColor: '#eaf6ff',
+      backgroundColor: colorWithAlpha(dominantColor, 0.1),
     },
     '.rbc-toolbar': {
       alignItems: 'center',
@@ -529,37 +530,68 @@ TheCalendarStyle.data = (options) => {
       borderColor: '#adadad',
       color: '#373a3c',
     },
+    '.the-calendar-changer': {
+      '&:active': {
+        boxShadow: 'none',
+        opacity: '0.8',
+      },
+      background: 'transparent',
+      border: 'none',
+      display: 'inline-flex',
+      margin: '0',
+      minHeight: '0',
+      padding: '4px 8px',
+    },
+    '.the-calendar-changer-container': {
+      alignItems: 'center',
+      display: 'flex',
+      flexGrow: 1,
+      fontWeight: 'normal',
+      justifyContent: 'flex-start',
+      margin: 0,
+      width: '100%',
+    },
     '.the-calendar-switcher': {
-      '&:active': {},
-      '&:hover': {},
+      '&:active': {
+        opacity: '0.8',
+      },
+      '&:hover': {
+        color: dominantColor,
+      },
       '&.the-calendar-switcher-selected': {
-        background: dominantColor,
-        borderColor: dominantColor,
-        color: 'white',
+        color: dominantColor,
         cursor: 'default',
         zIndex: 4,
       },
       borderRight: '1px solid #CCC',
       cursor: 'pointer',
       display: 'inline-block',
-      fontSize: 'x-small',
+      fontSize: 'xx-small',
       marginRight: '-1px',
-      padding: '4px 8px',
+      padding: '2px 4px',
       position: 'relative',
       textAlign: 'center',
       textDecoration: 'none',
     },
     '.the-calendar-switcher-container': {
       alignItems: 'center',
-      border: '1px solid #CCC',
       borderRadius: '4px',
       display: 'inline-flex',
       justifyContent: 'space-between',
       margin: '4px 0',
     },
     '.the-calendar-title': {
+      fontWeight: 'normal',
+      margin: 0,
+      padding: '0 4px',
+      textAlign: 'center',
+    },
+    '.the-calendar-title-container': {
+      alignItems: 'center',
+      display: 'flex',
       flexGrow: 1,
       fontWeight: 'normal',
+      justifyContent: 'center',
       margin: 0,
       width: '100%',
     },

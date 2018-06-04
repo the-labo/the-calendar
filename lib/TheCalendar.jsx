@@ -5,6 +5,7 @@ import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import BigCalendar from 'react-big-calendar'
+import { TheButton } from 'the-button'
 import { eventHandlersFor, htmlAttributesFor } from 'the-component-util'
 import { TheCondition } from 'the-condition'
 import { formatDate } from 'the-date'
@@ -19,6 +20,12 @@ const SwitcherLabels = {
   ja: ['月', '週', '日'],
 }
 
+const switcherClass = ({selected}) => c('the-calendar-switcher', {
+  'the-calendar-switcher-selected': selected,
+})
+
+const changerClass = () => c('the-calendar-changer', {})
+
 /**
  * Calendar of the-components
  */
@@ -28,13 +35,15 @@ class TheCalendar extends React.Component {
     this.handleMonthView = this.handleMonthView.bind(this)
     this.handleWeekView = this.handleWeekView.bind(this)
     this.handleDayView = this.handleDayView.bind(this)
+    this.handlePrev = this.handlePrev.bind(this)
+    this.handleNext = this.handleNext.bind(this)
   }
 
   get title () {
     const {date, lang, view} = this.props
     switch (view) {
       case 'month': {
-        const format = lang === 'ja' ? 'YYYY/MM' : 'MMMM YYYY'
+        const format = lang === 'ja' ? 'YYYY/MM' : 'MMM YYYY'
         return formatDate(date, format, {lang})
       }
       case 'day':
@@ -44,8 +53,30 @@ class TheCalendar extends React.Component {
     }
   }
 
+  changeDate (amount) {
+    this.changeToDate(this.dateForAmount(amount))
+  }
+
+  changeToDate (date) {
+    this.props.onNavigate(date)
+  }
+
   changeToView (view) {
     this.props.onView(view)
+  }
+
+  dateForAmount (amount) {
+    const {date, view} = this.props
+    switch (view) {
+      case 'month':
+        return moment(date).add(amount, 'months').toDate()
+      case 'week':
+        return moment(date).add(amount, 'weeks').toDate()
+      case  'day':
+        return moment(date).add(amount, 'days').toDate()
+      default:
+        throw new Error(`Unknown view: ${view}`)
+    }
   }
 
   handleDayView () {
@@ -54,6 +85,14 @@ class TheCalendar extends React.Component {
 
   handleMonthView () {
     this.changeToView('month')
+  }
+
+  handleNext () {
+    this.changeDate(+1)
+  }
+
+  handlePrev () {
+    this.changeDate(-1)
   }
 
   handleWeekView () {
@@ -80,32 +119,36 @@ class TheCalendar extends React.Component {
       >
         <div className='the-calendar-toolbar'>
           <div className='the-calendar-toolbar-col'>
-            <div>
+            <div className='the-calendar-changer-container'>
+              <TheButton className={changerClass()}
+                         icon={TheCalendar.PREV_ICON}
+                         onClick={this.handlePrev}
+              />
+              <TheButton className={changerClass()}
+                         icon={TheCalendar.NEXT_ICON}
+                         onClick={this.handleNext}
+              />
             </div>
           </div>
-          <div className='the-calendar-toolbar-col-wide'>
-            <h3 className='the-calendar-title'>
-              {this.title}
-            </h3>
+          <div className='the-calendar-toolbar-col the-calendar-toolbar-col-wide'>
+            <div className='the-calendar-title-container'>
+              <h3 className='the-calendar-title'>
+                {this.title}
+              </h3>
+            </div>
           </div>
           <div className='the-calendar-toolbar-col'>
             <div className='the-calendar-switcher-container'>
               <TheCondition if={views.includes('month')}>
-                <a className={c('the-calendar-switcher', {
-                  'the-calendar-switcher-selected': view === 'month',
-                })}
+                <a className={switcherClass({selected: view === 'month'})}
                    onClick={this.handleMonthView}>{switcherLabels[0]}</a>
               </TheCondition>
               <TheCondition if={views.includes('week')}>
-                <a className={c('the-calendar-switcher', {
-                  'the-calendar-switcher-selected': view === 'week',
-                })}
+                <a className={switcherClass({selected: view === 'week'})}
                    onClick={this.handleWeekView}>{switcherLabels[1]}</a>
               </TheCondition>
               <TheCondition if={views.includes('day')}>
-                <a className={c('the-calendar-switcher', {
-                  'the-calendar-switcher-selected': view === 'day',
-                })}
+                <a className={switcherClass({selected: view === 'day'})}
                    onClick={this.handleDayView}>{switcherLabels[2]}</a>
               </TheCondition>
             </div>
@@ -127,6 +170,8 @@ class TheCalendar extends React.Component {
   }
 }
 
+TheCalendar.NEXT_ICON = 'fas fa-caret-right'
+TheCalendar.PREV_ICON = 'fas fa-caret-left'
 TheCalendar.Style = TheCalendarStyle
 
 TheCalendar.propTypes = {

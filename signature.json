@@ -2,7 +2,74 @@
   "TheCalendar": {
     "description": "Calendar of the-components",
     "displayName": "TheCalendar",
-    "methods": [],
+    "methods": [
+      {
+        "name": "title",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "changeToDate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "date",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "changeToView",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "view",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleDayView",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleMonthView",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleNext",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handlePrev",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleWeekView",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "date": {
         "type": {
@@ -25,6 +92,17 @@
           "computed": false
         }
       },
+      "lang": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Lang",
+        "defaultValue": {
+          "value": "'en'",
+          "computed": false
+        }
+      },
       "onNavigate": {
         "type": {
           "name": "func"
@@ -40,8 +118,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "Change view"
+        "required": false,
+        "description": "Change view",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "view": {
         "type": {
@@ -64,7 +146,7 @@
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "['month', 'day', 'agenda']",
+          "value": "['month', 'day']",
           "computed": false
         }
       },
