@@ -556,17 +556,15 @@ TheCalendarStyle.data = (options) => {
         opacity: '0.8',
       },
       '&:hover': {
-        color: dominantColor,
+        borderBottomColor: colorWithAlpha(dominantColor, 0.5),
       },
-      '&:last-child': {
-        borderRight: 'none',
-      },
+      '&:last-child': {},
       '&.the-calendar-switcher-selected': {
-        color: dominantColor,
+        borderBottomColor: dominantColor,
         cursor: 'default',
         zIndex: 4,
       },
-      borderRight: '1px solid #E0E0E0',
+      borderBottom: '1px solid transparent',
       cursor: 'pointer',
       display: 'inline-block',
       fontSize: 'xx-small',
