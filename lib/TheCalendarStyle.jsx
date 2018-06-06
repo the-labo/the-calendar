@@ -558,12 +558,15 @@ TheCalendarStyle.data = (options) => {
       '&:hover': {
         color: dominantColor,
       },
+      '&:last-child': {
+        borderRight: 'none',
+      },
       '&.the-calendar-switcher-selected': {
         color: dominantColor,
         cursor: 'default',
         zIndex: 4,
       },
-      borderRight: '1px solid #CCC',
+      borderRight: '1px solid #E0E0E0',
       cursor: 'pointer',
       display: 'inline-block',
       fontSize: 'xx-small',
