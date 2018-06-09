@@ -195,11 +195,12 @@ TheCalendarStyle.data = (options) => {
       whiteSpace: 'nowrap',
     },
     '.rbc-event': {
-      backgroundColor: '#3174ad',
-      borderRadius: '5px',
+      backgroundColor: dominantColor,
+      borderRadius: '4px',
       color: '#fff',
       cursor: 'pointer',
-      padding: '2px 5px',
+      fontSize: 'smaller',
+      padding: '2px 4px',
     },
     '.rbc-event-continues-after': {
       borderBottomRightRadius: 0,
@@ -232,7 +233,7 @@ TheCalendarStyle.data = (options) => {
       boxShadow: '-1px 1px 5px 0px rgba(51, 51, 51, 0.5)',
     },
     '.rbc-event.rbc-selected': {
-      backgroundColor: '#265985',
+      backgroundColor: dominantColor,
     },
     '.rbc-header': {
       borderBottom: '1px solid #DDD',
