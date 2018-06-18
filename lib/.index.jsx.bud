@@ -5,7 +5,6 @@ const {dir} = require('the-templates')
 
 module.exports = [
   'index.jsx',
-  'index.mjs'
 ].map((filename) => ({
   ...dir({
     dirname: __dirname,

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { colorWithAlpha } from 'the-color'
 import { asStyleData } from 'the-component-util'
-import TheStyle from 'the-style'
+import { TheStyle } from 'the-style'
 
 /** Style for TheCalendar */
 const TheCalendarStyle = ({className, id, options}) => (
