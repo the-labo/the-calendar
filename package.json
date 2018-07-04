@@ -15,12 +15,12 @@
     "moment": "^2.22.2",
     "objnest": "^4.1.4",
     "prop-types": "^15.6.2",
-    "react-big-calendar": "^0.19.1",
+    "react-big-calendar": "^0.19.2",
     "the-button": "^3.0.21",
     "the-color": "^2.0.0",
     "the-component-util": "^2.4.0",
     "the-condition": "^3.0.3",
-    "the-date": "^3.0.3",
+    "the-date": "^3.0.6",
     "the-style": "^2.1.11"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "the-script-share": "^1.0.5",
     "the-script-test": "^2.1.1",
     "the-script-update": "^2.0.0",
-    "the-templates": "^4.0.15"
+    "the-templates": "^4.0.20"
   },
   "engines": {
     "node": ">=8",
