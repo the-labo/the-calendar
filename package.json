@@ -13,29 +13,29 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "moment": "^2.22.2",
-    "objnest": "^4.1.4",
+    "objnest": "^5.0.3",
     "prop-types": "^15.6.2",
     "react-big-calendar": "^0.19.2",
-    "the-button": "^3.0.21",
+    "the-button": "^3.0.25",
     "the-color": "^2.0.0",
-    "the-component-util": "^2.4.0",
-    "the-condition": "^3.0.3",
-    "the-date": "^3.0.6",
-    "the-style": "^2.1.11"
+    "the-component-util": "^3.0.5",
+    "the-condition": "^3.0.4",
+    "the-date": "^3.0.8",
+    "the-style": "^2.2.0"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.0.0-beta.44",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "@babel/runtime": "^7.0.0-rc.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
-    "the-component-demo": "^4.0.12",
-    "the-script-build": "^3.1.17",
+    "the-component-demo": "^4.0.16",
+    "the-script-build": "^4.0.5",
     "the-script-doc": "^1.0.2",
     "the-script-release": "^1.0.6",
     "the-script-share": "^1.0.5",
-    "the-script-test": "^2.1.1",
+    "the-script-test": "^2.1.3",
     "the-script-update": "^2.0.0",
-    "the-templates": "^4.0.20"
+    "the-templates": "^4.0.24"
   },
   "engines": {
     "node": ">=8",
