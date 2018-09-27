@@ -11,9 +11,7 @@ import { TheCondition } from 'the-condition'
 import theDate from 'the-date'
 import TheCalendarStyle from './TheCalendarStyle'
 
-{
-  BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
-}
+const localizer = BigCalendar.momentLocalizer(moment)
 
 const SwitcherLabels = {
   en: ['Month', 'Week', 'Day'],
@@ -157,6 +155,7 @@ class TheCalendar extends React.Component {
         <BigCalendar {...{
           date,
           events,
+          localizer,
           onNavigate,
           onView,
           view,
