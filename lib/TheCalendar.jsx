@@ -9,7 +9,6 @@ import { TheButton } from 'the-button'
 import { eventHandlersFor, htmlAttributesFor } from 'the-component-util'
 import { TheCondition } from 'the-condition'
 import theDate from 'the-date'
-import TheCalendarStyle from './TheCalendarStyle'
 
 const localizer = BigCalendar.momentLocalizer(moment)
 
@@ -18,7 +17,7 @@ const SwitcherLabels = {
   ja: ['月', '週', '日'],
 }
 
-const switcherClass = ({selected}) => c('the-calendar-switcher', {
+const switcherClass = ({ selected }) => c('the-calendar-switcher', {
   'the-calendar-switcher-selected': selected,
 })
 
@@ -38,14 +37,14 @@ class TheCalendar extends React.Component {
   }
 
   get title () {
-    const {date, lang, view} = this.props
+    const { date, lang, view } = this.props
     switch (view) {
       case 'month': {
         const format = lang === 'ja' ? 'YYYY/MM' : 'MMM YYYY'
-        return theDate(date, {lang}).format(format)
+        return theDate(date, { lang }).format(format)
       }
       case 'day':
-        return theDate(date, {lang}).format('LL')
+        return theDate(date, { lang }).format('LL')
       default:
         return null
     }
@@ -64,7 +63,7 @@ class TheCalendar extends React.Component {
   }
 
   dateForAmount (amount) {
-    const {date, view} = this.props
+    const { date, view } = this.props
     switch (view) {
       case 'month':
         return theDate(date).addMonths(amount).toDate()
@@ -98,7 +97,7 @@ class TheCalendar extends React.Component {
   }
 
   render () {
-    const {props} = this
+    const { props } = this
     const {
       className,
       date,
@@ -111,8 +110,8 @@ class TheCalendar extends React.Component {
     } = props
     const switcherLabels = SwitcherLabels[lang] || SwitcherLabels['en']
     return (
-      <div {...htmlAttributesFor(props, {except: ['className']})}
-           {...eventHandlersFor(props, {except: []})}
+      <div {...htmlAttributesFor(props, { except: ['className'] })}
+           {...eventHandlersFor(props, { except: [] })}
            className={c('the-calendar', className)}
       >
         <div className='the-calendar-toolbar'>
@@ -138,15 +137,15 @@ class TheCalendar extends React.Component {
           <div className='the-calendar-toolbar-col'>
             <div className='the-calendar-switcher-container'>
               <TheCondition if={views.includes('month')}>
-                <a className={switcherClass({selected: view === 'month'})}
+                <a className={switcherClass({ selected: view === 'month' })}
                    onClick={this.handleMonthView}>{switcherLabels[0]}</a>
               </TheCondition>
               <TheCondition if={views.includes('week')}>
-                <a className={switcherClass({selected: view === 'week'})}
+                <a className={switcherClass({ selected: view === 'week' })}
                    onClick={this.handleWeekView}>{switcherLabels[1]}</a>
               </TheCondition>
               <TheCondition if={views.includes('day')}>
-                <a className={switcherClass({selected: view === 'day'})}
+                <a className={switcherClass({ selected: view === 'day' })}
                    onClick={this.handleDayView}>{switcherLabels[2]}</a>
               </TheCondition>
             </div>
@@ -171,7 +170,6 @@ class TheCalendar extends React.Component {
 
 TheCalendar.NEXT_ICON = 'fas fa-caret-right'
 TheCalendar.PREV_ICON = 'fas fa-caret-left'
-TheCalendar.Style = TheCalendarStyle
 
 TheCalendar.propTypes = {
   /** Showing date object */

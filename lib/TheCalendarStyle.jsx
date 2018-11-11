@@ -8,8 +8,8 @@ import { asStyleData } from 'the-component-util'
 import { TheStyle } from 'the-style'
 
 /** Style for TheCalendar */
-const TheCalendarStyle = ({className, id, options}) => (
-  <TheStyle {...{id}}
+const TheCalendarStyle = ({ className, id, options }) => (
+  <TheStyle {...{ id }}
             className={c('the-calendar-style', className)}
             styles={TheCalendarStyle.data(options)}
   />
@@ -26,7 +26,7 @@ TheCalendarStyle.defaultProps = {
 }
 
 TheCalendarStyle.data = (options) => {
-  const {ThemeValues} = TheStyle
+  const { ThemeValues } = TheStyle
   const {
     dominantColor = ThemeValues.dominantColor,
   } = options
