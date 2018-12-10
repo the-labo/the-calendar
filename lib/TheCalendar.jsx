@@ -23,6 +23,25 @@ const switcherClass = ({ selected }) => c('the-calendar-switcher', {
 
 const changerClass = () => c('the-calendar-changer', {})
 
+const components = {
+  event: class TheCalendarEvent extends React.Component {
+    render () {
+      const {
+        event: { id, node = null },
+        title,
+      } = this.props
+      return (
+        <div className='the-calendar-event'
+             data-calendar-event-id={id}
+        >
+          {title}
+          {node}
+        </div>
+      )
+    }
+  },
+}
+
 /**
  * Calendar of the-components
  */
@@ -152,6 +171,7 @@ class TheCalendar extends React.Component {
           </div>
         </div>
         <BigCalendar {...{
+          components,
           date,
           events,
           localizer,
