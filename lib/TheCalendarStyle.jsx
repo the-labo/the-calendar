@@ -201,6 +201,7 @@ TheCalendarStyle.data = (options) => {
         color: '#fff',
         cursor: 'pointer',
         fontSize: 'smaller',
+        maxWidth: '100%',
         padding: '2px 4px',
       },
       '.rbc-event-continues-after': {
@@ -235,6 +236,7 @@ TheCalendarStyle.data = (options) => {
       },
       '.rbc-event.rbc-selected': {
         backgroundColor: dominantColor,
+        outlineColor: dominantColor,
       },
       '.rbc-header': {
         borderBottom: '1px solid #DDD',
@@ -323,6 +325,7 @@ TheCalendarStyle.data = (options) => {
         zIndex: 4,
       },
       '.rbc-row-segment': {
+        boxSizing: 'border-box',
         padding: '0 1px 1px 1px',
       },
       '.rbc-rtl': {
@@ -621,7 +624,12 @@ TheCalendarStyle.data = (options) => {
         cursor: 'not-allowed',
       },
     },
-    '.the-calendar-event': {},
+    '.the-calendar-event': {
+      maxWidth: '100%',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+    },
   })
 }
 
