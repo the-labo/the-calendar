@@ -141,7 +141,7 @@ TheCalendarStyle.data = (options) => {
         fontWeight: 'bold',
       },
       '.rbc-day-bg': {
-        flex: '1 0 0%',
+        flex: '100%',
       },
       '.rbc-day-bg + .rbc-day-bg': {
         borderLeft: '1px solid #DDD',
@@ -240,7 +240,7 @@ TheCalendarStyle.data = (options) => {
       },
       '.rbc-header': {
         borderBottom: '1px solid #DDD',
-        flex: '1 0 0%',
+        flex: '100%',
         fontSize: '90%',
         fontWeight: 'bold',
         minHeight: 0,
@@ -267,7 +267,7 @@ TheCalendarStyle.data = (options) => {
       },
       '.rbc-month-row': {
         display: 'flex',
-        flex: '1 0 0',
+        flex: '100',
         flexBasis: '0px',
         flexDirection: 'column',
         height: '100%',
@@ -280,7 +280,7 @@ TheCalendarStyle.data = (options) => {
       '.rbc-month-view': {
         border: '1px solid #DDD',
         display: 'flex',
-        flex: '1 0 0',
+        flex: '100',
         flexDirection: 'column',
         height: '100%',
         position: 'relative',
@@ -315,7 +315,7 @@ TheCalendarStyle.data = (options) => {
       },
       '.rbc-row-bg': {
         display: 'flex',
-        flex: '1 0 0',
+        flex: '100',
         flexDirection: 'row',
         overflow: 'hidden',
       },
@@ -413,7 +413,7 @@ TheCalendarStyle.data = (options) => {
         alignItems: 'flex-start',
         borderTop: '2px solid #DDD',
         display: 'flex',
-        flex: '1 0 0%',
+        flex: '100%',
         overflowY: 'auto',
         position: 'relative',
         width: '100%',
