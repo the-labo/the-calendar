@@ -202,7 +202,7 @@ TheCalendarStyle.data = (options) => {
         cursor: 'pointer',
         fontSize: 'smaller',
         maxWidth: '100%',
-        padding: '2px 4px',
+        padding: '0',
       },
       '.rbc-event-continues-after': {
         borderBottomRightRadius: 0,
