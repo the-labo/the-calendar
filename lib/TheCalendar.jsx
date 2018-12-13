@@ -53,6 +53,7 @@ class TheCalendar extends React.Component {
     this.handleDayView = this.handleDayView.bind(this)
     this.handlePrev = this.handlePrev.bind(this)
     this.handleNext = this.handleNext.bind(this)
+    this.handleEventSelect = this.handleEventSelect.bind(this)
   }
 
   get title () {
@@ -97,6 +98,17 @@ class TheCalendar extends React.Component {
 
   handleDayView () {
     this.changeToView('day')
+  }
+
+  handleEventSelect (selected) {
+    const { events } = this.props
+    for (const event of events) {
+      const { id, onSelect } = event
+      const hit = (id === selected.id) || event === selected
+      if (hit) {
+        onSelect && onSelect(event)
+      }
+    }
   }
 
   handleMonthView () {
@@ -181,6 +193,8 @@ class TheCalendar extends React.Component {
           views,
         }}
                      culture={lang}
+                     onEvrn
+                     onSelectEvent={this.handleEventSelect}
                      toolbar={false}
         />
       </div>

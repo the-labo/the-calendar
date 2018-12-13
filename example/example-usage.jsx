@@ -10,6 +10,19 @@ const events = [
     node: <span>This is event01</span>,
     start: new Date(),
     end: new Date(new Date().getTime() + 60 * 60 * 1000),
+    onSelect: (event) => {
+      console.log('event01 selected!', event)
+    }
+  },
+
+  {
+    id: 2,
+    node: <span>This is event02</span>,
+    start: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+    end: new Date(new Date().getTime() + 25 * 60 * 60 * 1000),
+    onSelect: (event) => {
+      console.log('event02 selected!', event)
+    }
   }
 ]
 
