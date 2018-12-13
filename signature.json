@@ -66,6 +66,18 @@
         "returns": null
       },
       {
+        "name": "handleEventSelect",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "selected",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "handleMonthView",
         "docblock": null,
         "modifiers": [],
